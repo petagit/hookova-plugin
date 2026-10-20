@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hookova": {
+      "type": "http",
+      "url": "https://www.hookova.com/mcp"
+    }
+  }
+}
