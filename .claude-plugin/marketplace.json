@@ -1,0 +1,18 @@
+{
+  "name": "hookova-plugin",
+  "description": "Hookova for Claude — the hosted Hookova MCP connector plus the skills that teach Claude the workflow.",
+  "owner": {
+    "name": "Hookova",
+    "email": "hookovasupport@gmail.com",
+    "url": "https://www.hookova.com"
+  },
+  "plugins": [
+    {
+      "name": "hookova",
+      "description": "Your short-video reference library, inspiration boards and publishing queue, from the conversation you're already in.",
+      "source": "./",
+      "category": "productivity",
+      "homepage": "https://www.hookova.com/guides/mcp-server"
+    }
+  ]
+}
