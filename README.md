@@ -10,11 +10,12 @@ post to your connected accounts. This plugin brings that account into Claude.
 
 ## What's in the plugin
 
-- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Fifteen
+- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Eighteen
   tools over your own account: `auth_status`; `save_link`, `list_saves`, `get_save`,
   `update_save`, `delete_save`, `export_saves`; `transcribe`, `get_transcription`;
-  `list_projects`, `get_hook_guide`; `list_publish_accounts`, `list_posts`, `schedule_draft`,
-  `cancel_post`. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
+  `list_projects`, `get_hook_guide`; `list_publish_accounts`, `publish_post`, `list_posts`,
+  `get_post`, `update_post`, `schedule_draft`, `cancel_post` — create, read, edit, schedule and
+  cancel posts to your connected accounts. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
   nothing is pasted into the chat. Revoke it any time under **Settings → MCP server** on
   hookova.com.
 - **`hookova` skill** — teaches Claude the workflow: check `auth_status` first, read before
@@ -53,9 +54,11 @@ Saves, boards, transcriptions and posts are your Hookova account's data, under t
 
 ## Not in the plugin
 
-Analysing a clip shot by shot, uploading a new video for a post, and connecting a social account
-happen in the Hookova app. Posting a file from your own disk (`publish_post`) and the `connect` /
-`sign_in` tools exist only in the [local stdio server](https://www.hookova.com/guides/mcp-server),
+Analysing a clip shot by shot and connecting a social account happen in the Hookova app.
+`publish_post` here takes its media as a public https link to the file (up to 100 MB a post); Claude
+cannot hand a tool an image pasted into the chat, so for one of those, share a link to the file or
+upload it on hookova.com/publish. Posting a file from your own disk and
+the `connect` / `sign_in` tools exist only in the [local stdio server](https://www.hookova.com/guides/mcp-server),
 which Claude Code users can run alongside this plugin. The free
 [sound-effects](https://www.hookova.com/sound-effects) and [music](https://www.hookova.com/music)
 libraries are separate MCP servers.

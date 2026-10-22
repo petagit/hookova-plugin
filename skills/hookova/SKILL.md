@@ -48,19 +48,26 @@ opening shot by shot. `stills` (0–12) returns reference frames as images. It i
 nothing. For building the user's own opening from a board, the `hook-from-project` skill in this
 plugin is the full workflow.
 
-**Publishing.** `list_publish_accounts()` is the connected social accounts (id, platform,
-handle). `list_posts(status?)` is the queue and the calendar — `draft`, `scheduled`, `processing`,
-`processed`. `schedule_draft(id, scheduledAt?)` sends a draft the user created in the app now, or
-at an ISO time *with an offset* (`2026-09-18T11:00:00-07:00`); `cancel_post(id)` withdraws a
-scheduled post or deletes a draft, with no undo. **Before anything that posts:** call `list_publish_accounts`, then confirm
-media, caption, target accounts and time with the user in one message. Uploading new media is done
-in the Hookova app (or the local Hookova MCP server), not through this connector.
+**Publishing — create, read, update, delete.** `list_publish_accounts()` is the connected social
+accounts (id, platform, handle). `publish_post(caption, mediaUrls, accountIds?, scheduledAt?,
+draft?, …)` creates a post: one video or one to ten photos, given as **public https links to the
+files themselves** (up to 100 MB a post, all files together), posted now, at an ISO time *with an offset*
+(`2026-09-18T11:00:00-07:00`), or saved as a draft. You cannot pass an image the user pasted into
+this chat to a tool — say so, and ask for a link to the file or point them to hookova.com/publish;
+never claim it was posted. `list_posts(status?)` is the queue and the calendar — `draft`,
+`scheduled`, `processing`, `processed`; `get_post(id)` is one post and where it landed.
+`update_post(id, caption?, title?, accountIds?, scheduledAt?, draft?)` edits a draft (it stays a
+draft) or a scheduled post (it keeps its time unless given one). `schedule_draft(id, scheduledAt?)`
+sends a draft; `cancel_post(id)` withdraws a scheduled post or deletes a draft, with no undo.
+**Before anything that posts or changes a scheduled post:** call `list_publish_accounts`, then
+confirm media, caption, target accounts and time with the user in one message.
 
 ## What this connector cannot do
 
 Say so plainly instead of improvising. It does not start a shot-by-shot analysis (that is the
 Analyze page in the app, 1 credit, about two minutes), does not spend credits, does not connect a
-social account (that is a browser sign-in on the platform), does not upload a video or render one,
+social account (that is a browser sign-in on the platform), cannot receive a file pasted into the
+chat (only a link to one), does not render a video,
 and does not style subtitles. The sound-effect and music libraries are separate MCP servers
 documented at hookova.com/sound-effects and hookova.com/music.
 
