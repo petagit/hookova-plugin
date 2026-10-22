@@ -52,9 +52,12 @@ plugin is the full workflow.
 accounts (id, platform, handle). `publish_post(caption, mediaUrls, accountIds?, scheduledAt?,
 draft?, …)` creates a post: one video or one to ten photos, given as **public https links to the
 files themselves** (up to 100 MB a post, all files together), posted now, at an ISO time *with an offset*
-(`2026-09-18T11:00:00-07:00`), or saved as a draft. You cannot pass an image the user pasted into
-this chat to a tool — say so, and ask for a link to the file or point them to hookova.com/publish;
-never claim it was posted. `list_posts(status?)` is the queue and the calendar — `draft`,
+(`2026-09-18T11:00:00-07:00`), or saved as a draft. You cannot pass a file the user pasted into
+this chat to a tool. For that, or any file on their device, call `create_upload()`: give them
+`uploadPage` (a hookova.com page where they pick the file), or, when you have a shell and the file
+is on this machine, PUT it to `putUrl` with its content-type. When they say it is uploaded, pass the
+returned `mediaUrl` in `mediaUrls` — any size, since it is already in storage. One file per link;
+call it once per photo. Never claim something was posted. `list_posts(status?)` is the queue and the calendar — `draft`,
 `scheduled`, `processing`, `processed`; `get_post(id)` is one post and where it landed.
 `update_post(id, caption?, title?, accountIds?, scheduledAt?, draft?)` edits a draft (it stays a
 draft) or a scheduled post (it keeps its time unless given one). `schedule_draft(id, scheduledAt?)`
@@ -67,7 +70,7 @@ confirm media, caption, target accounts and time with the user in one message.
 Say so plainly instead of improvising. It does not start a shot-by-shot analysis (that is the
 Analyze page in the app, 1 credit, about two minutes), does not spend credits, does not connect a
 social account (that is a browser sign-in on the platform), cannot receive a file pasted into the
-chat (only a link to one), does not render a video,
+chat (it uses `create_upload` instead), does not render a video,
 and does not style subtitles. The sound-effect and music libraries are separate MCP servers
 documented at hookova.com/sound-effects and hookova.com/music.
 
