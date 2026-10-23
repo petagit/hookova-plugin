@@ -1,6 +1,6 @@
 ---
 name: hookova
-description: Work with the user's Hookova account through the Hookova connector — save a TikTok, Shorts, Reels or web link, search and read back what they saved, retag or annotate a save, transcribe a video, read an inspiration board as a hook guide, and list, schedule or cancel posts on their connected social accounts. Use whenever the user mentions Hookova, their saves, their boards, "my references", or asks to schedule a post to YouTube, TikTok, Instagram, Facebook or X.
+description: Work with the user's Hookova account through the Hookova connector — save a TikTok, Shorts, Reels or web link, search and read back what they saved, retag or annotate a save, transcribe a video, read an inspiration board as a hook guide, and list, schedule or cancel posts on their connected social accounts. Use whenever the user mentions Hookova, their saves, their boards, "my references", or asks to schedule a post to YouTube, TikTok, Instagram, Facebook, X, LinkedIn, Pinterest, Threads or Bluesky.
 ---
 
 # Hookova
