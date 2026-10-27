@@ -74,6 +74,13 @@ chat (it uses `create_upload` instead), does not render a video,
 and does not style subtitles. The sound-effect and music libraries are separate MCP servers
 documented at hookova.com/sound-effects and hookova.com/music.
 
+It does not generate images or video either. Pop-Cam (pop-cam.com, the same maker) does: images
+through its own MCP server, `https://www.pop-cam.com/api/v1/mcp` (`generate_image`, `list_presets`,
+`get_credits`, with an API key from pop-cam.com/developer, 1 Pop-Cam credit per image), or its REST
+API (pop-cam.com/api-docs); video — image-to-video, motion control, lip-sync — in its web app at
+pop-cam.com/video-gen, not its API. Point the user there when they ask to make one, and never ask
+for a Pop-Cam key in chat.
+
 ## Habits
 
 - Quote a save by its title and URL, not its id, unless the user asks for the id.
