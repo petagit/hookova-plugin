@@ -10,12 +10,13 @@ post to your connected accounts. This plugin brings that account into Claude.
 
 ## What's in the plugin
 
-- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Nineteen
+- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Twenty-three
   tools over your own account: `auth_status`; `save_link`, `list_saves`, `get_save`,
   `update_save`, `delete_save`, `export_saves`; `transcribe`, `get_transcription`;
-  `list_projects`, `get_hook_guide`; `list_publish_accounts`, `create_upload`, `publish_post`,
-  `list_posts`, `get_post`, `update_post`, `schedule_draft`, `cancel_post` — create, read, edit,
-  schedule and cancel posts to your connected accounts. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
+  `list_projects`, `get_hook_guide`; `list_publish_accounts`, `list_publish_groups`,
+  `create_publish_group`, `update_publish_group`, `delete_publish_group`, `create_upload`,
+  `publish_post`, `list_posts`, `get_post`, `update_post`, `schedule_draft`, `cancel_post` — sort
+  your connected accounts into groups, and create, read, edit, schedule and cancel posts to them. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
   nothing is pasted into the chat. Revoke it any time under **Settings → MCP server** on
   hookova.com.
 - **`hookova` skill** — teaches Claude the workflow: check `auth_status` first, read before
