@@ -58,8 +58,8 @@ character, product or face the same across every shot, and a 9:16 reference give
 right away. Images carry no text unless the prompt asks for it, so put titles and captions in the
 edit, not in the picture.
 
-**Promotion videos (Automated Content).** `make_promo_video(product_name, description, website?,
-style?, picture?)` queues a finished 30–40 second vertical promotion video for the user's product:
+**Promotion videos (Automated Content).** `make_promo_video(website?, product_name?, description?,
+style?, picture?)` — a website alone (Hookova reads the site), or a name and a description — queues a finished 30–40 second vertical promotion video for the user's product:
 Hookova writes the script, makes the stills, records an AI voiceover, and adds music, captions and
 an end card with the name and website. It costs **10 Hookova credits**, taken when it is queued and
 refunded automatically if it fails — say the price and wait for a yes. The video claims only what
