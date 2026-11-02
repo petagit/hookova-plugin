@@ -10,10 +10,11 @@ post to your connected accounts. This plugin brings that account into Claude.
 
 ## What's in the plugin
 
-- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Twenty-three
+- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Twenty-four
   tools over your own account: `auth_status`; `save_link`, `list_saves`, `get_save`,
   `update_save`, `delete_save`, `export_saves`; `transcribe`, `get_transcription`;
-  `list_projects`, `get_hook_guide`; `list_publish_accounts`, `list_publish_groups`,
+  `list_projects`, `get_hook_guide`; `generate_image` (Pop-Cam's image model, 1 credit per image —
+  credits provided by Pop-Cam); `list_publish_accounts`, `list_publish_groups`,
   `create_publish_group`, `update_publish_group`, `delete_publish_group`, `create_upload`,
   `publish_post`, `list_posts`, `get_post`, `update_post`, `schedule_draft`, `cancel_post` — sort
   your connected accounts into groups, and create, read, edit, schedule and cancel posts to them. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
@@ -26,6 +27,9 @@ post to your connected accounts. This plugin brings that account into Claude.
   HyperFrames: reads the board as a hook guide, borrows the pattern (timing, shot sizes, camera,
   text placement) from the analysed clips and nothing else, and hands the build to the
   `hyperframes` skills. Needs those skills installed; it never spends a credit.
+- **`popcam-images` skill** — makes images with `generate_image`: the three modes (prompt,
+  reference + prompt, preset), the same character in every shot of a video, prompts that work, and
+  the price said up front. 1 credit per image, credits provided by Pop-Cam.
 
 ## Install
 

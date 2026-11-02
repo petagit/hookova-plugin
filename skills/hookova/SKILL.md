@@ -48,6 +48,16 @@ opening shot by shot. `stills` (0–12) returns reference frames as images. It i
 nothing. For building the user's own opening from a board, the `hook-from-project` skill in this
 plugin is the full workflow.
 
+**Images — credits provided by Pop-Cam.** `generate_image(prompt?, reference_image_url?, preset_id?,
+include_image?)` makes one image with Pop-Cam's image model (Nano Banana 2.1). Pop-Cam is the same
+maker's image app, bundled with Hookova: there is no Pop-Cam account or key to set up. It costs
+**1 Hookova credit per image**, charged only when an image comes back, so say the price before making
+several. A reference image (a public https link — the `image_url` of an earlier result works) keeps a
+character, product or face the same across every shot, and a 9:16 reference gives a 9:16 image
+(768×1376); with no reference the image is square. `image_url` lives for one hour: use or pass it on
+right away. Images carry no text unless the prompt asks for it, so put titles and captions in the
+edit, not in the picture.
+
 **Publishing — create, read, update, delete.** `list_publish_accounts()` is the connected social
 accounts (id, platform, handle, and `group`: the user's own group it is in, or null).
 `list_publish_groups()` is those groups — a brand, a client, a language — each with its accounts;
@@ -73,18 +83,16 @@ confirm media, caption, target accounts and time with the user in one message.
 ## What this connector cannot do
 
 Say so plainly instead of improvising. It does not start a shot-by-shot analysis (that is the
-Analyze page in the app, 1 credit, about two minutes), does not spend credits, does not connect a
+Analyze page in the app, 1 credit, about two minutes), spends credits only on `transcribe` and
+`generate_image`, does not connect a
 social account (that is a browser sign-in on the platform), cannot receive a file pasted into the
 chat (it uses `create_upload` instead), does not render a video,
 and does not style subtitles. The sound-effect and music libraries are separate MCP servers
 documented at hookova.com/sound-effects and hookova.com/music.
 
-It does not generate images or video either. Pop-Cam (pop-cam.com, the same maker) does: images
-through its own MCP server, `https://www.pop-cam.com/api/v1/mcp` (`generate_image`, `list_presets`,
-`get_credits`, with an API key from pop-cam.com/developer, 1 Pop-Cam credit per image), or its REST
-API (pop-cam.com/api-docs); video — image-to-video, motion control, lip-sync — in its web app at
-pop-cam.com/video-gen, not its API. Point the user there when they ask to make one, and never ask
-for a Pop-Cam key in chat.
+It does not generate video. Video — image-to-video, motion control, lip-sync — is in Pop-Cam's web
+app at pop-cam.com/video-gen. Point the user there when they ask for one, and never ask for a
+Pop-Cam key in chat.
 
 ## Habits
 
