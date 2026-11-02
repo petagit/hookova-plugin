@@ -10,14 +10,17 @@ post to your connected accounts. This plugin brings that account into Claude.
 
 ## What's in the plugin
 
-- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Twenty-four
-  tools over your own account: `auth_status`; `save_link`, `list_saves`, `get_save`,
+- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Thirty-three
+  tools: `auth_status`; `save_link`, `list_saves`, `get_save`,
   `update_save`, `delete_save`, `export_saves`; `transcribe`, `get_transcription`;
   `list_projects`, `get_hook_guide`; `generate_image` (Pop-Cam's image model, 1 credit per image —
   credits provided by Pop-Cam); `list_publish_accounts`, `list_publish_groups`,
   `create_publish_group`, `update_publish_group`, `delete_publish_group`, `create_upload`,
   `publish_post`, `list_posts`, `get_post`, `update_post`, `schedule_draft`, `cancel_post` — sort
-  your connected accounts into groups, and create, read, edit, schedule and cancel posts to them. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
+  your connected accounts into groups, and create, read, edit, schedule and cancel posts to them;
+  and the free libraries: `search_sounds`, `list_sounds`, `list_sound_groups`, `get_sound` (about a
+  thousand short sound effects) and `search_music`, `list_music`, `list_music_tags`,
+  `recommend_music`, `get_track` (1,442 royalty-free tracks), each answering with the MP3's url. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
   nothing is pasted into the chat. Revoke it any time under **Settings → MCP server** on
   hookova.com.
 - **`hookova` skill** — teaches Claude the workflow: check `auth_status` first, read before

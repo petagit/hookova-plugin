@@ -80,6 +80,15 @@ sends a draft; `cancel_post(id)` withdraws a scheduled post or deletes a draft, 
 **Before anything that posts or changes a scheduled post:** call `list_publish_accounts`, then
 confirm media, caption, target accounts and time with the user in one message.
 
+**Sound effects and music for a video** — free, no credits. `search_sounds(query, group?, max_seconds?)`
+finds a hit, a whoosh, a sting in about a thousand short MP3s (tags are what a clip sounds like —
+search "boom", not a meme name); `list_sound_groups()` names the sixteen kinds, `list_sounds` browses
+one, `get_sound(id)` reads one. For a background bed, `search_music(query?, mood?, use?,
+min_seconds?)` over 1,442 royalty-free tracks (`list_music_tags()` lists the moods and uses), or
+`recommend_music(brief)` with the video's story, feeling and energy — leave out mixing notes like
+"no vocals" or "under the voice", which it would read as the mood — and check `read_as` before
+picking. `get_track(id)` reads one. Give the user each pick's title and MP3 url.
+
 ## What this connector cannot do
 
 Say so plainly instead of improvising. It does not start a shot-by-shot analysis (that is the
@@ -87,8 +96,8 @@ Analyze page in the app, 1 credit, about two minutes), spends credits only on `t
 `generate_image`, does not connect a
 social account (that is a browser sign-in on the platform), cannot receive a file pasted into the
 chat (it uses `create_upload` instead), does not render a video,
-and does not style subtitles. The sound-effect and music libraries are separate MCP servers
-documented at hookova.com/sound-effects and hookova.com/music.
+and does not style subtitles. It cannot put a file on the user's disk: the sound and music tools
+answer with each MP3's url, which is the download.
 
 It does not generate video. Video — image-to-video, motion control, lip-sync — is in Pop-Cam's web
 app at pop-cam.com/video-gen. Point the user there when they ask for one, and never ask for a
