@@ -1,6 +1,6 @@
 ---
 name: hookova
-description: Work with the user's Hookova account through the Hookova connector — save a TikTok, Shorts, Reels or web link, search and read back what they saved, retag or annotate a save, transcribe a video, read an inspiration board as a hook guide, and list, schedule or cancel posts on their connected social accounts. Use whenever the user mentions Hookova, their saves, their boards, "my references", or asks to schedule a post to YouTube, TikTok, Instagram, Facebook, X, LinkedIn, Pinterest, Threads or Bluesky.
+description: Work with the user's Hookova account through the Hookova connector — save a TikTok, Shorts, Reels or web link, search and read back what they saved, retag or annotate a save, transcribe a video, read an inspiration board as a hook guide, make a promotion video for their product, and list, schedule or cancel posts on their connected social accounts. Use whenever the user mentions Hookova, their saves, their boards, "my references", or asks to schedule a post to YouTube, TikTok, Instagram, Facebook, X, LinkedIn, Pinterest, Threads or Bluesky.
 ---
 
 # Hookova
@@ -58,6 +58,21 @@ character, product or face the same across every shot, and a 9:16 reference give
 right away. Images carry no text unless the prompt asks for it, so put titles and captions in the
 edit, not in the picture.
 
+**Promotion videos (Automated Content).** `make_promo_video(product_name, description, website?,
+style?, picture?)` queues a finished 30–40 second vertical promotion video for the user's product:
+Hookova writes the script, makes the stills, records an AI voiceover, and adds music, captions and
+an end card with the name and website. It costs **10 Hookova credits**, taken when it is queued and
+refunded automatically if it fails — say the price and wait for a yes. The video claims only what
+`description` says (30–1,200 characters: what it is and why people want it), so write it from what
+the user told you and never add features, prices or numbers they did not give. `style` is `3d`,
+`photo`, `anime`, `watercolor` or `pixel`; `picture` is a public https link to a PNG, JPEG or WebP
+(up to 3 MB) of the product, a mascot or the user. English only. It takes about 20 minutes, longer
+behind other videos in the shared queue, and an account can have two open at once.
+`list_promo_videos(id?)` shows where each one is — queued (with how many are ahead), running (stage
+and percent), done (`video_url` and `cover_url`, signed for two hours, and a suggested `caption`)
+or error (credits refunded). Check every few minutes at most, or tell the user the Hookova web app
+notifies them when it is done; then hand them `video_url`, and offer to post it with `publish_post`.
+
 **Publishing — create, read, update, delete.** `list_publish_accounts()` is the connected social
 accounts (id, platform, handle, and `group`: the user's own group it is in, or null).
 `list_publish_groups()` is those groups — a brand, a client, a language — each with its accounts;
@@ -92,15 +107,15 @@ picking. `get_track(id)` reads one. Give the user each pick's title and MP3 url.
 ## What this connector cannot do
 
 Say so plainly instead of improvising. It does not start a shot-by-shot analysis (that is the
-Analyze page in the app, 1 credit, about two minutes), spends credits only on `transcribe` and
-`generate_image`, does not connect a
+Analyze page in the app, 1 credit, about two minutes), spends credits only on `transcribe`,
+`generate_image` and `make_promo_video`, does not connect a
 social account (that is a browser sign-in on the platform), cannot receive a file pasted into the
-chat (it uses `create_upload` instead), does not render a video,
+chat (it uses `create_upload` instead), renders no video but a promotion video from a product brief,
 and does not style subtitles. It cannot put a file on the user's disk: the sound and music tools
 answer with each MP3's url, which is the download.
 
-It does not generate video. Video — image-to-video, motion control, lip-sync — is in Pop-Cam's web
-app at pop-cam.com/video-gen. Point the user there when they ask for one, and never ask for a
+Any other video — image-to-video, motion control, lip-sync — is in Pop-Cam's web app at
+pop-cam.com/video-gen. Point the user there when they ask for one, and never ask for a
 Pop-Cam key in chat.
 
 ## Habits

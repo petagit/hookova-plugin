@@ -10,11 +10,12 @@ post to your connected accounts. This plugin brings that account into Claude.
 
 ## What's in the plugin
 
-- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Thirty-three
+- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Thirty-five
   tools: `auth_status`; `save_link`, `list_saves`, `get_save`,
   `update_save`, `delete_save`, `export_saves`; `transcribe`, `get_transcription`;
   `list_projects`, `get_hook_guide`; `generate_image` (Pop-Cam's image model, 1 credit per image —
-  credits provided by Pop-Cam); `list_publish_accounts`, `list_publish_groups`,
+  credits provided by Pop-Cam); `make_promo_video`, `list_promo_videos` (a finished promotion video
+  from a product brief in about 20 minutes, 10 credits, refunded if it fails); `list_publish_accounts`, `list_publish_groups`,
   `create_publish_group`, `update_publish_group`, `delete_publish_group`, `create_upload`,
   `publish_post`, `list_posts`, `get_post`, `update_post`, `schedule_draft`, `cancel_post` — sort
   your connected accounts into groups, and create, read, edit, schedule and cancel posts to them;
@@ -25,7 +26,8 @@ post to your connected accounts. This plugin brings that account into Claude.
   hookova.com.
 - **`hookova` skill** — teaches Claude the workflow: check `auth_status` first, read before
   retagging, confirm accounts and timing before anything posts, and say plainly what the
-  connector can't do (start an analysis, spend credits, upload or render video).
+  connector can't do (start an analysis, receive a file pasted into the chat, or render any video but
+  a promotion video from a product brief), and say the price before anything that spends credits.
 - **`hook-from-project` skill** — turns a board into the opening seconds of *your* video with
   HyperFrames: reads the board as a hook guide, borrows the pattern (timing, shot sizes, camera,
   text placement) from the analysed clips and nothing else, and hands the build to the
