@@ -28,7 +28,8 @@ account or key, so never ask for one.
 | Preset | `preset_id` (+ optional reference) | A Pop-Cam house style |
 
 **Shape follows the reference.** A 9:16 reference gives a 9:16 image (768×1376), which is right for
-Reels, Shorts and TikTok. With no reference the image is square. To get a vertical frame of a
+Reels, Shorts and TikTok. With no reference the model picks the shape (it came back landscape,
+1376×768, in testing). To get a vertical frame of a
 character, first make (or upload) the character on a 9:16 canvas and use that as the reference.
 
 ## Same character in every shot

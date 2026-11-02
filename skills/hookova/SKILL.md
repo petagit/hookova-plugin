@@ -54,7 +54,7 @@ maker's image app, bundled with Hookova: there is no Pop-Cam account or key to s
 **1 Hookova credit per image**, charged only when an image comes back, so say the price before making
 several. A reference image (a public https link — the `image_url` of an earlier result works) keeps a
 character, product or face the same across every shot, and a 9:16 reference gives a 9:16 image
-(768×1376); with no reference the image is square. `image_url` lives for one hour: use or pass it on
+(768×1376); with no reference the model picks the shape (landscape in testing). `image_url` lives for one hour: use or pass it on
 right away. Images carry no text unless the prompt asks for it, so put titles and captions in the
 edit, not in the picture.
 
