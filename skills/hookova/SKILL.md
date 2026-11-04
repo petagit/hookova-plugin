@@ -15,7 +15,7 @@ pasted into the chat.
 ## Start with `auth_status`
 
 Every session, before anything else, call `auth_status`. It says whether the connector is signed
-in, as whom, on which plan, and what is left today (analysis credits, saves against the daily
+in, as whom, on which plan, and what is left today (credits, saves against the daily
 allowance). If it fails with a sign-in error, tell the user to connect the Hookova connector in
 their Claude client (the plugin's **Connectors** tab on claude.ai, or `/mcp` → hookova →
 Authenticate in Claude Code) and stop — there is no tool that signs in for them.
