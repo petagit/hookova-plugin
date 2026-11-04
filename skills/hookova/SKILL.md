@@ -104,6 +104,15 @@ min_seconds?)` over 1,442 royalty-free tracks (`list_music_tags()` lists the moo
 "no vocals" or "under the voice", which it would read as the mood — and check `read_as` before
 picking. `get_track(id)` reads one. Give the user each pick's title and MP3 url.
 
+## Color filters
+
+`list_luts(query?, group?)` searches the 43 free sRGB creative LUTs from Hookova's photo editor,
+by name or family (Color Neg, Chrome, Matte & Fade, Cine & Night, Mono). `get_lut(id)` returns one
+with its public `.cube` url. Give the user that url to load in their editor — returning it does
+not mean the filter was applied. This connector cannot read or grade the user's files; the local
+Hookova MCP's `apply_lut` does that with FFmpeg on their machine. These are color looks for SDR
+footage and photos, not HDR/log conversions or full Lightroom recipes.
+
 ## What this connector cannot do
 
 Say so plainly instead of improvising. It does not start a shot-by-shot analysis (that is the
@@ -112,7 +121,8 @@ Analyze page in the app, 1 credit, about two minutes), spends credits only on `t
 social account (that is a browser sign-in on the platform), cannot receive a file pasted into the
 chat (it uses `create_upload` instead), renders no video but a promotion video from a product brief,
 and does not style subtitles. It cannot put a file on the user's disk: the sound and music tools
-answer with each MP3's url, which is the download.
+answer with each MP3's url and `get_lut` with the `.cube` url, which is the download. It does not
+grade the user's photos or videos.
 
 Any other video — image-to-video, motion control, lip-sync — is in Pop-Cam's web app at
 pop-cam.com/video-gen. Point the user there when they ask for one, and never ask for a

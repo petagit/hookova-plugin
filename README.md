@@ -10,7 +10,7 @@ post to your connected accounts. This plugin brings that account into Claude.
 
 ## What's in the plugin
 
-- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Thirty-five
+- **One connector** — the hosted Hookova MCP server at `https://www.hookova.com/mcp`. Thirty-seven
   tools: `auth_status`; `save_link`, `list_saves`, `get_save`,
   `update_save`, `delete_save`, `export_saves`; `transcribe`, `get_transcription`;
   `list_projects`, `get_hook_guide`; `generate_image` (Pop-Cam's image model, 1 credit per image —
@@ -21,7 +21,9 @@ post to your connected accounts. This plugin brings that account into Claude.
   your connected accounts into groups, and create, read, edit, schedule and cancel posts to them;
   and the free libraries: `search_sounds`, `list_sounds`, `list_sound_groups`, `get_sound` (about a
   thousand short sound effects) and `search_music`, `list_music`, `list_music_tags`,
-  `recommend_music`, `get_track` (1,442 royalty-free tracks), each answering with the MP3's url. Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
+  `recommend_music`, `get_track` (1,442 royalty-free tracks), each answering with the MP3's url; and
+  `list_luts`, `get_lut` (43 free color LUTs from the photo editor, each answering with its `.cube`
+  url — grading a file on your machine is the local Hookova MCP's `apply_lut`). Sign-in is OAuth 2.1 in your own browser — Google-linked accounts work, and
   nothing is pasted into the chat. Revoke it any time under **Settings → MCP server** on
   hookova.com.
 - **`hookova` skill** — teaches Claude the workflow: check `auth_status` first, read before

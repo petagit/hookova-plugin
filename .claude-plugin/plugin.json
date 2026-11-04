@@ -1,8 +1,8 @@
 {
   "name": "hookova",
   "displayName": "Hookova",
-  "version": "1.6.0",
-  "description": "Your short-video reference library, inspiration boards and publishing queue, from the conversation you're already in. Save TikTok, Shorts, Reels and web links, search what you saved, transcribe a video, export a board as a hook guide with reference stills, create, schedule and edit posts to your connected social accounts, find free sound effects and royalty-free music for a video, and have a promotion video made from a product brief.",
+  "version": "1.7.0",
+  "description": "Your short-video reference library, inspiration boards and publishing queue, from the conversation you're already in. Save TikTok, Shorts, Reels and web links, search what you saved, transcribe a video, export a board as a hook guide with reference stills, create, schedule and edit posts to your connected social accounts, find free sound effects, royalty-free music and color LUTs for a video, and have a promotion video made from a product brief.",
   "author": {
     "name": "Hookova",
     "email": "hookovasupport@gmail.com",
